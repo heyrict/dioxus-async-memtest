@@ -7,7 +7,7 @@ edition = "2021"
 
 [dependencies]
 tokio = { version = "^1.0", features = ["full"] }
-tokio-stream = "^0.1"
+reqwest = { version = "^0.11", features = ["json", "gzip", "cookies"] }
 
 dioxus = { git = "https://github.com/DioxusLabs/dioxus", rev = "2dddba9bd62bf12b8791c5b5e48ff663e86be363" }
 dioxus-desktop = { git = "https://github.com/DioxusLabs/dioxus", package = "dioxus-desktop", rev = "2dddba9bd62bf12b8791c5b5e48ff663e86be363" }
