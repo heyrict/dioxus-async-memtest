@@ -27,7 +27,6 @@ fn app(cx: Scope) -> Element {
             let intf = &intf.read().0;
             for i in 1..100 {
                 loading.set(true);
-                sleep(Duration::new(0, 100_000)).await;
                 let response_expect =
                     format!("Failed to get text http://127.0.0.1:8080/{}.txt", &i);
                 let response = intf
