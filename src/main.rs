@@ -20,8 +20,6 @@ fn app(cx: Scope) -> Element {
     let text = use_state::<String>(&cx, || String::new());
 
     let handle_click = move |_| {
-        use tokio::time::{sleep, Duration};
-
         to_owned![intf, text, loading];
         cx.spawn(async move {
             let intf = &intf.read().0;
@@ -59,6 +57,7 @@ fn app(cx: Scope) -> Element {
     })
 }
 
-fn main() {
+#[tokio::main]
+async fn main() {
     dioxus_desktop::launch(app)
 }
